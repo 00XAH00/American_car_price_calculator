@@ -1,0 +1,60 @@
+html, body, #react-entry-point, #_dash-global-error-container, #_dash-global-error-container>div,
+#_dash-global-error-container>div>div:not(.dash-debug-menu__outer, .dash-debug-menu),
+#_dash-global-error-container>div>div:not(.dash-debug-menu__outer, .dash-debug-menu)>div,
+#_dash-app-content, #_dash-app-content>div {
+    height: max-content;
+}
+
+
+H1, H2, H4, P {
+    color: white;
+}
+
+.main-row {
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    background-color: #1e1e1e !important;
+}
+
+.menu-button {
+    width: 100%;
+}
+
+.user-controls {
+    padding: 8px 16px 8px 24px;
+    margin: 0;
+}
+
+.user-result {
+    padding: 8px 24px 8px 24px;
+    background-color: #31302f !important;
+}
+
+#button-column>button {
+    margin: 5px 0 5px 0;
+}
+
+#button-column {
+    margin-top: 50px;
+}
+
+.user-result>H1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#upload-data>div {
+    transition: background-color 1.5s cubic-bezier(0.1, 0.8, 0.5, 2), color 1s .5s linear;
+}
+
+#upload-data>div:hover {
+    background-color: color(srgb 0.415 0.4109 0.4067);
+    /*pointer-events: ;*/
+}
