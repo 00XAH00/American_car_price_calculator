@@ -1,6 +1,6 @@
 from app import app
 # noinspection PyUnresolvedReferences
-from callbacks import change_menu_page, upload_file
+import callbacks
 
 
 if __name__ == '__main__':
