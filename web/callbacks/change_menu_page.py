@@ -6,15 +6,10 @@ from dash_extensions.enrich import Input, Output, ctx
 
 @app.callback(
     Output(component_id='button-column', component_property='children'), Input('model-train-btn', 'n_clicks'),
-    Input('model-data-btn', 'n_clicks'), Input('model-math-btn', 'n_clicks')
+    Input('model-data-btn', 'n_clicks'), Input('model-math-btn')
 )
-def btn_callback(btn_one, btn_two, btn_three):
+def btn_callback(btn_one, btn_two):
     if ctx.triggered_id is None:
         raise PreventUpdate
     else:
-        print(btn_one)
-        print(btn_two)
-        print(btn_three),
-
-        print(ctx.triggered_id)
         return buttons(ctx.triggered_id)
