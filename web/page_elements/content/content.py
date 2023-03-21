@@ -34,6 +34,13 @@ content = dbc.Col(
         html.Div(
             id='output-image-upload',
             children=table.generate_table()
+        ),
+        html.Div(
+            id='div-train-btn',
+            children=dbc.Button(
+                id="train-btn",
+                children="Тренировать",
+            )
         )
     ],
     className="user-result"
