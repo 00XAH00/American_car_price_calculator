@@ -1,13 +1,11 @@
 import dash_bootstrap_components as dbc
-import pandas as pd
 from dash import dash_table
 from dash_extensions.enrich import html, dcc
+from services.data import Data
 
 
-df = pd.read_csv('./data/stockdata.csv', index_col=0, parse_dates=True)
-df.index = pd.to_datetime(df['Date'])
-
-df_two = pd.read_csv('./data/car_prices.csv', index_col=0, parse_dates=True)
+data = Data()
+example_table = data.get_example_table()
 
 content = dbc.Col(
     [
@@ -38,8 +36,8 @@ content = dbc.Col(
         ),
         html.P("Загрузите файл в формате csv содержащий следующие столбцы:"),
         dash_table.DataTable(
-            data=df_two.to_dict('records'),
-            columns=[{"name": i, "id": i} for i in df_two.columns],
+            data=example_table.to_dict('records'),
+            columns=[{"name": i, "id": i} for i in example_table.columns],
             style_data={
                 'backgroundColor': '#31302f',
                 'color': 'white'
