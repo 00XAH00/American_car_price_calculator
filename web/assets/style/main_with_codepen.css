@@ -13,6 +13,7 @@ H1, H2, H4, P {
 .main-row {
     width: 100%;
     margin: 0;
+    min-height: 100vh;
     height: 100%;
     background-color: #1e1e1e !important;
 }
