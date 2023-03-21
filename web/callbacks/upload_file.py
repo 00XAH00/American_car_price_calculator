@@ -2,6 +2,7 @@ from dash_extensions.enrich import html
 from dash_extensions.enrich import Input, Output, State, DashLogger
 from pandas.core.frame import DataFrame
 from app import app
+from page_elements.content import table
 from services.file import UploadFile
 
 
@@ -23,4 +24,4 @@ def update_output(content: str, name: str, date: int, dash_logger: DashLogger):
         if not upload_file.table_structure_validate(input_data):
             dash_logger.warning("Структура файла не соответствует примеру", autoClose=2500)
 
-        return html.Div("test")
+        return table.generate_table(input_data)

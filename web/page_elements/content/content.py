@@ -31,8 +31,10 @@ content = dbc.Col(
             className='upload-href'
         ),
         html.P("Загрузите файл в формате csv содержащий следующие столбцы:"),
-        table.generate_table(),
-        html.Div(id='output-image-upload'),
+        html.Div(
+            id='output-image-upload',
+            children=table.generate_table()
+        )
     ],
     className="user-result"
 )
