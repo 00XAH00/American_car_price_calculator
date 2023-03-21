@@ -1,11 +1,7 @@
 import dash_bootstrap_components as dbc
-from dash import dash_table
 from dash_extensions.enrich import html, dcc
-from services.data import Data
+from page_elements.content import table
 
-
-data = Data()
-example_table = data.get_example_table()
 
 content = dbc.Col(
     [
@@ -35,15 +31,7 @@ content = dbc.Col(
             className='upload-href'
         ),
         html.P("Загрузите файл в формате csv содержащий следующие столбцы:"),
-        dash_table.DataTable(
-            data=example_table.to_dict('records'),
-            columns=[{"name": i, "id": i} for i in example_table.columns],
-            style_data={
-                'backgroundColor': '#31302f',
-                'color': 'white'
-            },
-            page_size=50
-        ),
+        table.generate_table(),
         html.Div(id='output-image-upload'),
     ],
     className="user-result"
