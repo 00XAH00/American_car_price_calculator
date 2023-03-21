@@ -1,11 +1,3 @@
-html, body, #react-entry-point, #_dash-global-error-container, #_dash-global-error-container>div,
-#_dash-global-error-container>div>div:not(.dash-debug-menu__outer, .dash-debug-menu),
-#_dash-global-error-container>div>div:not(.dash-debug-menu__outer, .dash-debug-menu)>div,
-#_dash-app-content, #_dash-app-content>div {
-    height: max-content;
-}
-
-
 H1, H2, H4, P {
     color: white;
 }
