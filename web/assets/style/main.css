@@ -35,7 +35,7 @@ H1, H2, H4, P {
 .user-result>H1 {
     width: 100%;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 a {
@@ -60,4 +60,34 @@ a {
 #train-btn {
     margin: 50px auto 25px auto;
     width: 75%;
+}
+
+.form-check {
+    padding-left: 0;
+    margin: 15px;
+}
+.btn-group {
+    width: 100%;
+    justify-content: center;
+}
+
+.form-check>label {
+    display: table-cell;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+.example_table_text {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.material-symbols-outlined {
+    color: white;
+}
+
+.models-help-row {
+    display: flex;
+    justify-content: center;
 }
