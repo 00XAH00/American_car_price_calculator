@@ -1,11 +1,19 @@
 import dash_bootstrap_components as dbc
 from dash_extensions.enrich import html, dcc
 from page_elements.content import table
-
+from page_elements.content.model_type import model_types_row
 
 content = dbc.Col(
     [
         html.H1("Тренировка модели"),
+        html.Div(
+            children=[
+                html.H2("Укажите тип модели для обучения", className="model-type-header"),
+                html.Span("help", className="material-symbols-outlined"),
+            ],
+            className="models-help-row"
+        ),
+        model_types_row,
         html.A(
             dcc.Upload(
                 id='upload-image',
@@ -30,7 +38,7 @@ content = dbc.Col(
             # href='javascript: void(0)',
             className='upload-href'
         ),
-        html.P("Загрузите файл в формате csv содержащий следующие столбцы:"),
+        html.P("Загрузите файл в формате csv содержащий следующие столбцы:", className="example_table_text"),
         html.Div(
             id='output-image-upload',
             children=table.generate_table()
