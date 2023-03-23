@@ -1,4 +1,4 @@
-H1, H2, H4, P {
+H1, H2, H4, P, a, .material-symbols-outlined {
     color: white;
 }
 
@@ -39,7 +39,6 @@ H1, H2, H4, P {
 }
 
 a {
-    color: white;
     text-decoration: none;
 }
 
@@ -83,16 +82,12 @@ a {
     margin-bottom: 0;
 }
 
-.material-symbols-outlined {
-    color: white;
-}
-
 .models-help-row {
     display: flex;
     justify-content: center;
 }
 
-.accordion-p {
+.accordion-p, .modal-form-input>p {
     color: black;
 }
 
@@ -104,4 +99,12 @@ a {
 textarea {
     border-radius: 10px;
     border: .2rem solid;
+}
+
+.modal-form-input {
+    margin-bottom: 15px;
+}
+
+.modal-form-input>p {
+    margin-bottom: 0;
 }
