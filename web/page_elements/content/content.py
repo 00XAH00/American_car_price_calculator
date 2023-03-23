@@ -21,7 +21,8 @@ content = dbc.Col(
         dbc.Accordion(
             [
                 dbc.AccordionItem(
-                    html.Textarea(
+                    dcc.Textarea(
+                        id="hyperparametrs-input",
                         placeholder="{\n\t'max_features': [1, 5, 10, 15]\n\t'alpha': [.1, .2, .3, .4, .5]\n}",
                         style={'width': '100%', 'height': 200}
                     ),
