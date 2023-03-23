@@ -74,7 +74,7 @@ a {
 .form-check>label {
     display: table-cell;
     width: 200px;
-    height: 100px;
+    height: 130px;
     text-align: center;
 }
 
@@ -90,4 +90,18 @@ a {
 .models-help-row {
     display: flex;
     justify-content: center;
+}
+
+.accordion-p {
+    color: black;
+}
+
+#upload-image {
+    margin-left: -10px;
+    padding-right: 10px;
+}
+
+textarea {
+    border-radius: 10px;
+    border: 2px solid green;
 }
