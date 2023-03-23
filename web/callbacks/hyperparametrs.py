@@ -17,7 +17,6 @@ def hyperparametrs_validate(value):
 
     try:
         literal_eval(value)
-        print(value)
         style.update({'borderColor': 'green'})
     except (SyntaxError, ValueError):
         style.update({'borderColor': 'red'})
