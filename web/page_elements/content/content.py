@@ -2,9 +2,11 @@ import dash_bootstrap_components as dbc
 from dash_extensions.enrich import html, dcc
 from page_elements.content import table
 from page_elements.content.model_type import model_types_row
+from page_elements.form.login_modal_form import login_form
 
 content = dbc.Col(
     [
+        login_form,
         html.H1("Тренировка модели"),
         html.Div(
             children=[
