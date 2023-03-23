@@ -1,7 +1,6 @@
 import dash_bootstrap_components as dbc
-
-
 from page_elements.form.input import form_input
+
 
 login_form = dbc.Modal(
     [
@@ -21,11 +20,11 @@ login_form = dbc.Modal(
         dbc.ModalFooter(
             dbc.Button(
                 "Войти",
-                id="close",
+                id="login-btn",
                 className="ms-auto"
             ),
         ),
     ],
     id="modal",
-    is_open=True,
+    is_open=False,
 )
