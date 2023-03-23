@@ -108,3 +108,9 @@ textarea {
 .modal-form-input>p {
     margin-bottom: 0;
 }
+
+#open-login-form {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
