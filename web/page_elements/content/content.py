@@ -9,7 +9,11 @@ content = dbc.Col(
         html.Div(
             children=[
                 html.H2("Укажите тип модели для обучения", className="model-type-header"),
-                html.Span("help", className="material-symbols-outlined"),
+                html.A(
+                    href="https://scikit-learn.org/stable/supervised_learning.html#supervised-learning",
+                    children=html.Span("help", className="material-symbols-outlined", id="models-help"),
+                    target="_blank"
+                )
             ],
             className="models-help-row"
         ),
