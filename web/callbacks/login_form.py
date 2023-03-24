@@ -24,9 +24,10 @@ def open_form(n1: int, user_login: str, user_password: str, dash_logger: DashLog
     user_token = authorize.auth(user_login, user_password)
 
     if not user_token:
-        dash_logger.warning("Не верный логин или пароль")
+        dash_logger.warning("Не верный логин или пароль", autoClose=settings.notify_auto_close_time)
         return login_form
 
     dash.callback_context.response.set_cookie("user-token", user_token)
+    dash_logger.info("Вход выполнен успешно!", autoClose=settings.notify_auto_close_time)
 
     return None
