@@ -27,6 +27,6 @@ def open_form(n1: int, user_login: str, user_password: str, dash_logger: DashLog
         dash_logger.warning("Не верный логин или пароль")
         return login_form
 
-    dash.callback_context.response.set_cookie("token", user_token)
+    dash.callback_context.response.set_cookie("user-token", user_token)
 
     return None
