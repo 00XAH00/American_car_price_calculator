@@ -1,8 +1,8 @@
 import dash
-import flask
-from dash_extensions.enrich import Output, State, Input
+from dash import Output, State, Input
 from dash_extensions.enrich import DashLogger
 from app import app
+from core.settings import settings
 from page_elements.form.login_modal_form import login_form
 from services.Authorize import Authorize
 
@@ -13,13 +13,11 @@ from services.Authorize import Authorize
     [
         State("user-login", "value"),
         State("user-password", "value"),
-
     ],
     log=True
 )
 def open_form(n1: int, user_login: str, user_password: str, dash_logger: DashLogger):
     authorize = Authorize()
-    # print(flask.request.cookies.to_dict())
 
     user_token = authorize.auth(user_login, user_password)
 
