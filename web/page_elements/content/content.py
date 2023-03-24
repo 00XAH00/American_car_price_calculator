@@ -31,7 +31,8 @@ content = dbc.Col(
                     ),
                     title="Гиперпараметры (не обязательно)"
                 )
-            ]
+            ],
+            start_collapsed=True
         ),
         html.A(
             dcc.Upload(
