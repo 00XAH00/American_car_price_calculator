@@ -2,7 +2,7 @@ import dash_bootstrap_components as dbc
 
 
 model_types_row = dbc.RadioItems(
-    id="radios",
+    id="model-type-row",
     className="btn-group",
     inputClassName="btn-check",
     labelClassName="btn btn-outline-primary",
