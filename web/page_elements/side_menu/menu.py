@@ -1,7 +1,7 @@
 import dash_bootstrap_components as dbc
 from dash import html
-
 from page_elements.side_menu.buttons import buttons
+
 
 menu = dbc.Col(
     [
