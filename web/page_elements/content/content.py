@@ -7,12 +7,6 @@ from page_elements.form.login_modal_form import login_form
 
 content = dbc.Col(
     [
-        html.Div(
-            dbc.Button(
-                id="open-login-form",
-                children="Войти"
-            )
-        ),
         login_form,
         html.H1("Тренировка модели"),
         html.Div(
