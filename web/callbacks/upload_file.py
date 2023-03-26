@@ -1,3 +1,4 @@
+import dash
 from dash_extensions.enrich import Input, Output, State, DashLogger
 from pandas.core.frame import DataFrame
 from app import app
@@ -14,12 +15,12 @@ def update_output(content: str, name: str, date: int, dash_logger: DashLogger):
 
         if not upload_file.type_validate(name):
             dash_logger.warning("Файл должен быть в формате csv!", autoClose=settings.notify_auto_close_time)
-            return
+            return dash.no_update
 
         input_data = upload_file.read_from_content(content)
         if not isinstance(input_data, DataFrame):
             dash_logger.error("Не удалось прочитать содержимое файла", autoClose=settings.notify_auto_close_time)
-            return
+            return dash.no_update
 
         if not upload_file.table_structure_validate(input_data):
             dash_logger.warning("Структура файла не соответствует примеру", autoClose=settings.notify_auto_close_time)
@@ -28,3 +29,5 @@ def update_output(content: str, name: str, date: int, dash_logger: DashLogger):
         upload_file.data.send_train_data(input_data)
 
         return table.generate_table(input_data)
+
+    return dash.no_update
