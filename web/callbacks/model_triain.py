@@ -12,7 +12,7 @@ from services.server import ServerApi
 @app.callback(
     Output("login-btn-div", "children"),
     [
-        Input('div-train-btn', "n_clicks"),
+        Input('train-btn', "n_clicks"),
         State('model-type-row', 'value'),
         State('table', 'data')
     ],
