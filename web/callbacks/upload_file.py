@@ -25,9 +25,6 @@ def update_output(content: str, name: str, date: int, dash_logger: DashLogger):
         if not upload_file.table_structure_validate(input_data):
             dash_logger.warning("Структура файла не соответствует примеру", autoClose=settings.notify_auto_close_time)
 
-        # TODO: Переместить в callback кнопки для тренировки модели
-        upload_file.data.send_train_data(input_data)
-
         return table.generate_table(input_data)
 
     return dash.no_update

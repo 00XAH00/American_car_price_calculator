@@ -5,6 +5,7 @@ from dash_extensions.enrich import DashLogger
 from app import app
 from core.settings import settings
 from services.Authorize import Authorize
+from services.file import UploadFile
 from services.server import ServerApi
 
 
@@ -30,15 +31,13 @@ def train_model(n1, model_value, table_data, dash_logger: DashLogger):
                          autoClose=settings.notify_auto_close_time)
         return
 
-    print(model_value)
-
     train_status = server_api.train_model(model_value, table_data)
     if not train_status:
         dash_logger.info("Обучение модели не удалось", autoClose=settings.notify_auto_close_time)
         return
 
+    server_api.send_train_data(table_data)
+
     dash_logger.info("Обучение прошло успешно", autoClose=settings.notify_auto_close_time*2)
     dash_logger.info("Подобранные гиперпараметры: ", autoClose=settings.notify_auto_close_time*2)
     dash_logger.info("Данные метрики: 0.88463625", autoClose=settings.notify_auto_close_time*2)
-
-    print(len(table_data))
