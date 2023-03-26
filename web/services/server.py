@@ -1,5 +1,9 @@
+from os import system
 from random import choice
 from typing import List
+
+from pandas import DataFrame
+
 from core.settings import settings
 
 
@@ -22,3 +26,10 @@ class ServerApi:
         result += ''.join([choice(login) for i in range(10)])
 
         return result
+
+    @staticmethod
+    def send_train_data(data: List):
+        with open('./data/train_user_data.csv', 'w') as f:
+            f.write(', '.join([key for key in data[0].keys()]) + '\n')
+            for line in data:
+                f.write(', '.join([str(item[1]) for item in line.items()]) + '\n')
