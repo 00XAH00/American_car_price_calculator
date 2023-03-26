@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  car_calc_web:
+    container_name: car_calc_web
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    ports:
+      - "5875:5873"
