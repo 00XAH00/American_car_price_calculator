@@ -114,3 +114,9 @@ textarea {
     top: 15px;
     right: 15px;
 }
+
+H4.data-not-exists {
+    width: 100%;
+    text-align: center;
+    color: red
+}

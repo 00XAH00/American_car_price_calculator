@@ -23,5 +23,5 @@ def btn_callback(btn_one, btn_two, btn_three):
         case 'model-train-btn':
             return [buttons(ctx.triggered_id), train_page]
         case 'model-data-btn':
-            return [buttons(ctx.triggered_id), model_trained_data]
+            return [buttons(ctx.triggered_id), model_trained_data()]
     return [buttons(ctx.triggered_id), dash.no_update]
