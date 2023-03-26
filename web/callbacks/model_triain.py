@@ -1,5 +1,6 @@
 import dash
-from dash import Input, State, Output
+from dash import Input, State, Output, ctx, html
+from dash.exceptions import PreventUpdate
 from dash_extensions.enrich import DashLogger
 from app import app
 from core.settings import settings
@@ -16,16 +17,18 @@ from services.server import ServerApi
     ],
     log=True)
 def train_model(n1, model_value, table_data, dash_logger: DashLogger):
+    if ctx.triggered[0]["value"] is None:
+        raise PreventUpdate
     server_api = ServerApi()
     authorize = Authorize()
 
     if not authorize.is_auth():
         dash_logger.info("Для продолжения необходимо авторизоваться!", autoClose=settings.notify_auto_close_time)
-        return
+        return dash.no_update
     if len(table_data) == 1:
         dash_logger.info("Для тренировки модели необходимо загрузить данные обучения!",
                          autoClose=settings.notify_auto_close_time)
-        return dash.no_update
+        return
 
     print(model_value)
 
