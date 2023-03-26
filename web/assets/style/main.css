@@ -50,13 +50,13 @@ a {
     background-color: color(srgb 0.415 0.4109 0.4067);
 }
 
-#div-train-btn {
+#div-train-btn, #div-calc-btn{
     display: flex;
     align-items: center;
     width: 100%;
 }
 
-#train-btn {
+#train-btn, #calc-btn {
     margin: 50px auto 25px auto;
     width: 75%;
 }
@@ -119,4 +119,8 @@ H4.data-not-exists {
     width: 100%;
     text-align: center;
     color: red
+}
+
+#cr {
+    display: none;
 }

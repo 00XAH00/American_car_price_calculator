@@ -3,8 +3,11 @@ from pandas import DataFrame
 from services.data import Data
 
 
-def generate_table(table_input: DataFrame = Data().get_example_table(), page_size: int = 50):
+def generate_table(table_input: DataFrame = Data().get_example_table(), page_size: int = 50, with_price: bool = True):
     if isinstance(table_input, DataFrame):
+        if not with_price:
+            table_input.drop(['price'], axis=1, inplace=True)
+
         table = dash_table.DataTable(
             id="table",
             data=table_input.to_dict('records'),

@@ -22,8 +22,10 @@ class UploadFile:
 
         return False
 
-    def table_structure_validate(self, input_data: DataFrame):
+    def table_structure_validate(self, input_data: DataFrame, with_price: bool = True):
         example_data = self.data.get_example_table()
+        if not with_price:
+            example_data.drop(['price'], axis=1, inplace=True)
         example_data_columns = example_data.columns
         input_data_columns = input_data.columns
 
