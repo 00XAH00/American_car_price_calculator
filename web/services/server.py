@@ -1,6 +1,8 @@
+import json
 from os.path import exists
 from random import choice
 from typing import List, Union
+import numpy as np
 import pandas as pd
 from pandas import DataFrame
 from core.settings import settings
@@ -41,3 +43,11 @@ class ServerApi:
     @staticmethod
     def validate_path(path_to_file: str):
         return exists(path_to_file)
+
+    @staticmethod
+    def calc_price(data: List) -> DataFrame:
+        data = pd.read_json(json.dumps(data))
+        data = data.assign(price=(pd.Series(np.random.random(len(data))).values*100000).round())
+        data["price"] = data['price'].astype('int')
+
+        return data
