@@ -3,6 +3,8 @@ from page_elements.main_page import layout
 from dash_extensions.enrich import DashProxy, LogTransform, NoOutputTransform
 
 app = DashProxy(
+    title="CarCalc",
+    update_title="CarCalc updating>>>",
     transforms=[LogTransform(), NoOutputTransform()],
     prevent_initial_callbacks=True,
     external_stylesheets=[
