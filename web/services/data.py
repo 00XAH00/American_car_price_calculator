@@ -1,10 +1,10 @@
 import pandas as pd
-from pandas import DataFrame
-from os import system
+from services.server import ServerApi
 
 
-class Data:
-    def __init__(self): ...
+class Data(ServerApi):
+    def __init__(self):
+        super().__init__()
 
     # TODO: Изменить на получение данных с сервера
     @staticmethod
@@ -12,8 +12,3 @@ class Data:
         example_data = pd.read_csv('./data/car_prices_example.csv', parse_dates=True)
 
         return example_data
-
-    @staticmethod
-    def send_train_data(data: DataFrame):
-        system("rm ./data/train_user_data.csv")
-        data.to_csv('./data/train_user_data.csv')
