@@ -1,4 +1,3 @@
-from random import choice
 from flask import request
 from services.server import ServerApi
 
