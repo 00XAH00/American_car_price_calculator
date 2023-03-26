@@ -21,7 +21,6 @@ def update_output(content: str, name: str, cr: str, dash_logger: DashLogger):
     else:
         with_price = True
 
-    print(with_price)
     if content is not None:
         upload_file = UploadFile()
 
