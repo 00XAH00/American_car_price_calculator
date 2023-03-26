@@ -1,9 +1,8 @@
-from os import system
+from os.path import exists
 from random import choice
-from typing import List
-
+from typing import List, Union
+import pandas as pd
 from pandas import DataFrame
-
 from core.settings import settings
 
 
@@ -33,3 +32,12 @@ class ServerApi:
             f.write(', '.join([key for key in data[0].keys()]) + '\n')
             for line in data:
                 f.write(', '.join([str(item[1]) for item in line.items()]) + '\n')
+
+    def get_data(self, path_to_file: str) -> Union[DataFrame, None]:
+        if not self.validate_path(path_to_file):
+            return None
+        return pd.read_csv(path_to_file)
+
+    @staticmethod
+    def validate_path(path_to_file: str):
+        return exists(path_to_file)
