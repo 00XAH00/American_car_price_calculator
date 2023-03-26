@@ -29,9 +29,9 @@ class ServerApi:
     @staticmethod
     def send_train_data(data: List):
         with open('./data/train_user_data.csv', 'w') as f:
-            f.write(', '.join([key for key in data[0].keys()]) + '\n')
+            f.write(','.join([key for key in data[0].keys()]) + '\n')
             for line in data:
-                f.write(', '.join([str(item[1]) for item in line.items()]) + '\n')
+                f.write(','.join([str(item[1]) for item in line.items()]) + '\n')
 
     def get_data(self, path_to_file: str) -> Union[DataFrame, None]:
         if not self.validate_path(path_to_file):
