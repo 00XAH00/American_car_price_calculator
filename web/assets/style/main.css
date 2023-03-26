@@ -32,7 +32,7 @@ H1, H2, H4, P, a, .material-symbols-outlined {
     margin-top: 50px;
 }
 
-.user-result>div>H1 {
+.user-result>div>div>H1 {
     width: 100%;
     text-align: center;
     margin-bottom: 25px;
